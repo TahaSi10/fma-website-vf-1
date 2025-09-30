@@ -8,6 +8,7 @@ import InstagramReels from "@/components/home/instagram-reels";
 import { getTranslation } from "../i18n";
 import AboutSection from "@/components/home/about-section";
 import TutorialSection from "@/components/home/tutorial-section";
+import Link from "next/link";
 
 export default async function Home({
   params
@@ -24,6 +25,21 @@ export default async function Home({
         <HeroSection heroTitle={t('hero-title')} heroSubtitle={t('hero-subtitle')} heroTitleResults={t('hero-title-results')}/>
         <TimeAndLocation />
         <CtaButton />
+        
+        {/* Pedagogical Content Section */}
+        <div className="text-center animate-fade-up opacity-0 space-y-10" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
+          <h2 className="animate-fade-up bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm [text-wrap:balance] md:text-5xl md:leading-[4rem]" style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}>
+            {t('pedagogical-content-title')}
+          </h2>
+          <Link href="/documents/FMA_Pedagogical_Content.pdf" target="_blank" rel="noopener noreferrer" className="mt-8 inline-block">
+            <button className="p-[3px] relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-sky-500 to-[#272162] rounded-lg" />
+              <div className="px-8 py-3 bg-white rounded-[6px] relative group transition duration-200 text-black hover:bg-transparent hover:text-white font-semibold">
+                {t('pedagogical-content-button')}
+              </div>
+            </button>
+          </Link>
+        </div>
       </div>
 
       <div 
